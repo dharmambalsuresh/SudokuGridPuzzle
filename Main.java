@@ -37,7 +37,8 @@ public class Main
 		}
 	}
 
-	private static void buildmatrix(String line, int gridsize, int counter, char[][] matrix) {
+	private static void buildmatrix(String line, int gridsize, int counter, char[][] matrix) 
+	{
 		// TODO Auto-generated method stub
 		char[] array = new char[line.length()];
 		int i = 0;
@@ -63,7 +64,6 @@ public class Main
 				matrix[counter][j] = array[j];
 			}
 		}
-
 	}
 
 	private static char[] getsymbols(int gridsize) 
@@ -81,16 +81,25 @@ public class Main
 			System.out.println("Number of symbols are not correct");
 			getsymbols(gridsize);
 		}
-		else if(array.length==0)
+		if(array.length!=0)
 		{
-			System.out.println("Symbols cannot be null");
+			for(int j=0;j<=array.length;j++)
+			{
+				for(int k=j+1;k<array.length;k++)
+				{
+				  if(array[j]==array[j+1])
+				  {
+					  System.out.println("Duplicate characters!!!");
+					  getsymbols(gridsize);
+				  }
+				}	  
+			  }
 		}
 		return array;
 	}
 
 	private static int getsize()
 	{
-
 		boolean intvalue;
 		System.out.println("Enter the size of the grid: ");
 		Scanner input=new Scanner(System.in);
@@ -102,5 +111,4 @@ public class Main
 		}
 		return size;
 	}
-
 }

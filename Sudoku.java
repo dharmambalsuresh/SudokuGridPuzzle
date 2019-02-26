@@ -21,7 +21,7 @@ public class Sudoku {
 		for (int i = 0; i < gridsize; i++) {
 			for (int j = 0; j < gridsize; j++) {
 				if (sudokugrid[i][j] == '0') {
-					for (int k = 0; i < symbolsArr.length; k++) {
+					for (int k = 0; k <=symbolsArr.length; k++) {
 						boolean presentinrow = inRow(i, symbolsArr[k], gridsize);
 						boolean presentincolumn = inColumn(j, symbolsArr[k], gridsize);
 						boolean presentinsmallgrid = inSmallgrid(i, j, symbolsArr[k]);
